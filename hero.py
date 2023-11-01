@@ -23,6 +23,9 @@ class Hero:
 
         print(f"{winner.name} defeats {loser.name}!")
 
+
+
+# Test Hero Class
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman", 800)
     hero2 = Hero("Dumbledore", 500)
