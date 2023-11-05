@@ -10,6 +10,8 @@ class Hero:
 		self.name = name
 		self.starting_health = starting_health
 		self.current_health = starting_health
+		self.deaths = 0
+		self.kills = 0
 
 
 	def fight(self, opponent):
@@ -79,9 +81,22 @@ class Hero:
 			elif not opponent.is_alive():
 				print(f"{self.name} won!")
 				break
+		if self.current_health <= 0:
+			self.add_death(1)
+			opponent.add_kill(1)
+		elif opponent.current_health <= 0:
+			opponent.add_death(1)
+			self.add_kill(1)
+
 		
 	def add_weapon(self, weapon):
 		self.abilities.append(weapon)
+
+	def add_kill(self, num_kills):
+		self.kills += num_kills
+	
+	def add_death(self, num_deaths):
+		self.deaths += num_deaths
 
 
 # Test add_ability()
