@@ -1,6 +1,7 @@
 import random
 from ability import Ability
 from armor import Armor
+from weapon import Weapon
 
 class Hero:
 	def __init__(self, name, starting_health=100):
@@ -78,6 +79,9 @@ class Hero:
 			elif not opponent.is_alive():
 				print(f"{self.name} won!")
 				break
+		
+	def add_weapon(self, weapon):
+		self.abilities.append(weapon)
 
 
 # Test add_ability()
@@ -150,6 +154,14 @@ if __name__ == "__main__":
     hero2.add_ability(ability4)
     hero1.fight(hero2)
 
+# Test Weapon
+if __name__ == "__main__":
+    # If you run this file from the terminal
+    # this block is executed.
+    hero = Hero("Wonder Woman")
+    weapon = Weapon("Lasso of Truth", 90)
+    hero.add_weapon(weapon)
+    print(hero.attack())
 
 # # Test Hero Class
 # if __name__ == "__main__":
