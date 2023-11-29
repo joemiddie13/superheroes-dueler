@@ -198,5 +198,3 @@ if __name__ == "__main__":
 #  hero2 = Hero("Dumbledore")
 
 #  hero1.fight(hero2)
-
-
